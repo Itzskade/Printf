@@ -1,12 +1,12 @@
 <p align="right">
   <a href="README.md">
-    <img src="https://img.shields.io/badge/English-README-red?style=for-the-badge" alt="English README" />
+    <img src="https://img.shields.io/badge/English-README-%23DC143C?style=for-the-badge" alt="English README" />
   </a>
 </p>
 
 <div align="left">
     <img src='https://img.shields.io/badge/Barcelona-black?style=flat&logo=42&logoColor=white'/>
-    <img src="https://img.shields.io/badge/puntuación-100%20%2F%20100-success?color=red&style=flat" />
+    <img src="https://img.shields.io/badge/puntuación-100%20%2F%20100-success?color=%23DC143C&style=flat" />
 </div>
 
 # 💻 Proyecto ft_printf
