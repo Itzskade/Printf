@@ -1,23 +1,31 @@
 NAME 	:= libftprintf.a
-SRC 	:= ft_printf.c ft_printf_utils.c ft_printf_utils2.c
-OBJ		:= $(SRC:.c=.o)
+SRC 	:= main.c src/ft_printf.c src/ft_printf_utils.c src/ft_printf_utils2.c
+OBJ	:= obj/ft_printf.o obj/ft_printf_utils.o obj/ft_printf_utils2.o
+INC	:= include/ft_printf.h
 
-CC 		:= cc
-CFLAGS 	:= -Wall -Werror -Wextra
+SRC_DIR	:= src
+OBJ_DIR	:= obj
+INC_DIR	:= include
 
-AR 		:= ar
+CC 	:= cc
+CFLAGS 	:= -Wall -Werror -Wextra -ggdb3 -I $(INC_DIR)
+
+AR 	:= ar
 ARFLAGS	:= rcs
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) 
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-%.o: %.c
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | Makefile $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
 	rm -f $(NAME)
